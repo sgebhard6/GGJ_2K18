@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public GameObject levelCompleteCanvas;
+    public GameObject levelCompletePanel;
+	public GameObject levelFailPanel;
 
 	public void PlantHit()
     {
-        levelCompleteCanvas.SetActive(true);
+		levelCompletePanel.SetActive(true);
     }
+
+	public void FailLevel()
+	{
+		levelFailPanel.SetActive (true);
+	}
 }

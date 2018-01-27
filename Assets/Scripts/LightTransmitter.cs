@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LightTransmitter : MonoBehaviour {
 
+	public bool devMode;
     public GameObject lightObject;
     public LineRenderer lightRayRenderer;
+	public Image chargeIndicator;
+	public List<Sprite> chargeLevels;
     public int maxRays = 5;
+	public int maxLightCharges = 3;
     public float maxDistance = 150f;
-    public float rotationSpeed = 5f;
+    public float rotationSpeed = 50f;
 
     public LayerMask layerMask;
 
     GameManager gameManager;
 
     int currentRayCount = 0;
+	int currentLightCharges = 0;
     //List<Ray> rayList = new List<Ray>();
     List<LightBeam> rayList = new List<LightBeam>();
 
@@ -22,9 +28,12 @@ public class LightTransmitter : MonoBehaviour {
 
     Ray lightRay;
 
+	bool disableControls = false;
+
     private void Start()
     {
         gameManager = GetComponent<GameManager>();
+		currentLightCharges = maxLightCharges;
         Reset();
     }
 
@@ -36,10 +45,17 @@ public class LightTransmitter : MonoBehaviour {
     }
 
     void Update () {
+		if (disableControls)
+			return;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Reset();
             TransmitLight(lightRay);
+			if (!devMode) {
+				currentLightCharges--;
+				if (currentLightCharges > 0)
+					chargeIndicator.sprite = chargeLevels [currentLightCharges - 1];
+			}
         }
 
 		if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -52,6 +68,12 @@ public class LightTransmitter : MonoBehaviour {
 
     void TransmitLight(Ray _ray)
     {
+		if (currentLightCharges < 1) {
+			gameManager.FailLevel ();
+			disableControls = true;
+			return;
+		}
+		
         if (currentRayCount < maxRays)
         {
             currentRayCount++;

@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
+	public void ReloadLevel()
+	{
+		SceneManager.LoadScene (GetCurrentScene ());
+	}
+
 	public void LoadNextLevel()
     {
-		SceneManager.LoadScene (GetCurrentScene () + 1);
+		if (GetCurrentScene () + 1 == SceneManager.sceneCountInBuildSettings - 1)
+			SceneManager.LoadScene (0);
+		else
+			SceneManager.LoadScene (GetCurrentScene () + 1);
     }
 
 	public void LoadMainMenu()
@@ -17,9 +25,6 @@ public class LevelManager : MonoBehaviour {
 
 	int GetCurrentScene()
 	{
-		if (SceneManager.GetActiveScene ().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
-			return -1;
-		else
-			return SceneManager.GetActiveScene ().buildIndex;
+		return SceneManager.GetActiveScene ().buildIndex;
 	}
 }
