@@ -47,7 +47,7 @@ public class LightTransmitter : MonoBehaviour {
     void Update () {
 		if (disableControls)
 			return;
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+		if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
             Reset();
             TransmitLight(lightRay);
@@ -84,8 +84,10 @@ public class LightTransmitter : MonoBehaviour {
 
             if (hit.collider != null)
             {
-                if (hit.collider.tag.Equals("Plant"))
-                    gameManager.PlantHit();
+				if (hit.collider.tag.Equals ("Plant")) {
+					gameManager.PlantHit ();
+					disableControls = true;
+				}
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Reflective"))
                 {
                     newDir = Vector3.Reflect(_ray.direction, hit.normal);

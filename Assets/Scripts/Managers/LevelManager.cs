@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void LoadNextLevel()
     {
-		if (GetCurrentScene () + 1 == SceneManager.sceneCountInBuildSettings - 1)
+		if (GetCurrentScene () + 1 == SceneManager.sceneCountInBuildSettings)
 			SceneManager.LoadScene (0);
 		else
 			SceneManager.LoadScene (GetCurrentScene () + 1);
