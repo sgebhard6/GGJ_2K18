@@ -510,7 +510,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1743923180728938, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_Name
-      value: Wall (1)
+      value: Mirror
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
