@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4773906148225994}
   - component: {fileID: 120692346498435222}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LightRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,8 +47,8 @@ LineRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1700734884925560}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0

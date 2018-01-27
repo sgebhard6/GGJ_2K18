@@ -174,74 +174,51 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 541756756}
     m_Modifications:
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.78
       objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_LocalPosition.y
       value: 2.88
       objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+    - target: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1120534256775318, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
-      propertyPath: m_Name
-      value: MovingWall
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.10440766
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.29976484
-      objectReference: {fileID: 0}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1432143938}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 693257150}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: faab4b046c18a4f4f9969cf1379530c8, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &121180289 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1120534256775318, guid: faab4b046c18a4f4f9969cf1379530c8,
-    type: 2}
-  m_PrefabInternal: {fileID: 121180288}
---- !u!114 &121180290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 121180289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705a342bf792d754e8a7e74533a48009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1432143938}
-  - {fileID: 693257150}
-  speed: 1
-  threshold: 0.5
 --- !u!1001 &240218907
 Prefab:
   m_ObjectHideFlags: 0
@@ -588,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693257150}
   m_Layer: 10
-  m_Name: GameObject (1)
+  m_Name: Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1222,7 +1199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1432143938}
   m_Layer: 10
-  m_Name: GameObject
+  m_Name: Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1722,7 +1699,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &2142701598 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4650220375922470, guid: faab4b046c18a4f4f9969cf1379530c8,
+  m_PrefabParentObject: {fileID: 4080855152303556, guid: fcc675f893248cf459c0b28dc555b3b1,
     type: 2}
   m_PrefabInternal: {fileID: 121180288}
 --- !u!1001 &2143372662

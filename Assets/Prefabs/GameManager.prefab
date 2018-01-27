@@ -69,7 +69,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   devMode: 0
   lightObject: {fileID: 0}
-  lightRayRenderer: {fileID: 0}
+  lightRayRendererPrefab: {fileID: 120692346498435222, guid: 6484e6121d183324d84ab18760afa149,
+    type: 2}
+  newLineMat: {fileID: 2100000, guid: fad299f9a6d1a8d469b77736e7b01f13, type: 2}
+  oldLineMat: {fileID: 2100000, guid: 444ba657094256e46b365884e8dc24c5, type: 2}
   chargeIndicator: {fileID: 0}
   chargeLevels:
   - {fileID: 21300012, guid: 91bfb4f330a52c0449b6b23e2fa3e834, type: 3}
