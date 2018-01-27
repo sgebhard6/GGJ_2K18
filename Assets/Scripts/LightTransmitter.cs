@@ -8,8 +8,11 @@ public class LightTransmitter : MonoBehaviour {
     public LineRenderer lightRayRenderer;
     public int maxRays = 5;
     public float maxDistance = 150f;
+    public float rotationSpeed = 5f;
 
     public LayerMask layerMask;
+
+    GameManager gameManager;
 
     int currentRayCount = 0;
     //List<Ray> rayList = new List<Ray>();
@@ -21,6 +24,7 @@ public class LightTransmitter : MonoBehaviour {
 
     private void Start()
     {
+        gameManager = GetComponent<GameManager>();
         Reset();
     }
 
@@ -38,6 +42,11 @@ public class LightTransmitter : MonoBehaviour {
             TransmitLight(lightRay);
         }
 
+		if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            RotateLight(true);
+		else if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            RotateLight(false);
+
         DrawRays();
 	}
 
@@ -53,6 +62,8 @@ public class LightTransmitter : MonoBehaviour {
 
             if (hit.collider != null)
             {
+                if (hit.collider.tag.Equals("Plant"))
+                    gameManager.PlantHit();
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Reflective"))
                 {
                     newDir = Vector3.Reflect(_ray.direction, hit.normal);
@@ -61,6 +72,20 @@ public class LightTransmitter : MonoBehaviour {
                     TransmitLight(lightRay);
                 }
             }
+        }
+    }
+
+    public void RotateLight(bool direction)
+    {
+        if(direction == true)
+        {
+            //Rotate Up
+            lightObject.transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            //Rotate Down
+            lightObject.transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
         }
     }
 
