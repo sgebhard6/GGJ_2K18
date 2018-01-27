@@ -49,13 +49,13 @@ public class LightTransmitter : MonoBehaviour {
 			return;
 		if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
-            Reset();
-            TransmitLight(lightRay);
 			if (!devMode) {
 				currentLightCharges--;
-				if (currentLightCharges > 0)
-					chargeIndicator.sprite = chargeLevels [currentLightCharges - 1];
+				if(currentLightCharges > -1)
+					chargeIndicator.sprite = chargeLevels [currentLightCharges];
 			}
+            Reset();
+            TransmitLight(lightRay);
         }
 
 		if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))

@@ -70,9 +70,10 @@ MonoBehaviour:
   lightRayRenderer: {fileID: 0}
   chargeIndicator: {fileID: 0}
   chargeLevels:
-  - {fileID: 21300004, guid: ec58c5f10eb2ead4cb9f87b878cccda4, type: 3}
-  - {fileID: 21300002, guid: ec58c5f10eb2ead4cb9f87b878cccda4, type: 3}
-  - {fileID: 21300000, guid: ec58c5f10eb2ead4cb9f87b878cccda4, type: 3}
+  - {fileID: 21300012, guid: 91bfb4f330a52c0449b6b23e2fa3e834, type: 3}
+  - {fileID: 21300008, guid: 91bfb4f330a52c0449b6b23e2fa3e834, type: 3}
+  - {fileID: 21300006, guid: 91bfb4f330a52c0449b6b23e2fa3e834, type: 3}
+  - {fileID: 21300002, guid: 91bfb4f330a52c0449b6b23e2fa3e834, type: 3}
   maxRays: 20
   maxLightCharges: 3
   maxDistance: 2000
