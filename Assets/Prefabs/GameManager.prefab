@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d52ced3d0209c848a422ba7d77c7176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devMode: 0
+  devMode: 1
   lightObject: {fileID: 0}
   lightRayRendererPrefab: {fileID: 120692346498435222, guid: 6484e6121d183324d84ab18760afa149,
     type: 2}
