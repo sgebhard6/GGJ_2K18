@@ -26,6 +26,7 @@ public class LightTransmitter : MonoBehaviour
 	GameManager gameManager;
 
 	int currentRayCount = 0;
+	int totalRayCount = 0;
 	int currentLightCharges = 0;
 	//List<Ray> rayList = new List<Ray>();
 	List<LightBeam> rayList = new List<LightBeam> ();
@@ -90,6 +91,7 @@ public class LightTransmitter : MonoBehaviour
 	{
 		if (currentRayCount < maxRays) {
 			currentRayCount++;
+			totalRayCount++;
             
 			RaycastHit2D hit = Physics2D.Raycast (_ray.origin, _ray.direction, maxDistance, layerMask);
 			//rayList.Add(lightRay);
@@ -99,7 +101,7 @@ public class LightTransmitter : MonoBehaviour
 				if (hit.collider.tag.Equals ("Plant")) {
 					gameManager.PlantHit ();
 					disableControls = true;
-					OnLevelCompleted (currentRayCount, currentLightCharges);
+					OnLevelCompleted (totalRayCount, currentLightCharges);
 					return;
 				}
 				if (hit.collider.gameObject.layer == LayerMask.NameToLayer ("Reflective")) {

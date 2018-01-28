@@ -33,5 +33,6 @@ public class ScoreManager : MonoBehaviour
 	{
 		score += (_currentLightCharges * 100) - (_currentRayCount * 2);
 		scoreText.text = "Score: " + score;
+		PlayerPrefs.SetInt ("Score", score);
 	}
 }

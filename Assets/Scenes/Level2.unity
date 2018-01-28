@@ -2021,15 +2021,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4190222291819852, guid: 6a143f99f16f7df4e9f8523f748ffad1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.8042545
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4190222291819852, guid: 6a143f99f16f7df4e9f8523f748ffad1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.830064
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4190222291819852, guid: 6a143f99f16f7df4e9f8523f748ffad1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.22533064
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4190222291819852, guid: 6a143f99f16f7df4e9f8523f748ffad1, type: 2}
       propertyPath: m_LocalRotation.x

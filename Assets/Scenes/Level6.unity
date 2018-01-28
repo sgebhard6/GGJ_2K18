@@ -162,7 +162,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
@@ -544,7 +544,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
@@ -835,7 +835,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1213,7 +1213,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.36764705, g: 0.36764705, b: 0.36764705, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.4014705, b: 0.41176468, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1408,7 +1408,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
@@ -1422,11 +1422,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4190222291819852, guid: 6a143f99f16f7df4e9f8523f748ffad1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.8042545
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4190222291819852, guid: 6a143f99f16f7df4e9f8523f748ffad1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.830064
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4190222291819852, guid: 6a143f99f16f7df4e9f8523f748ffad1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1640,7 +1640,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 4302912254911294, guid: 33f7ff472a9bff24ca32ea9b6014318c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
