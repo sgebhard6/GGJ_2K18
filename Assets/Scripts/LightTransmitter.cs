@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class LightTransmitter : MonoBehaviour
 {
+	public delegate void LevelComplete (int _currentRayCount, int _currentLightCharges);
+
+	public static event LevelComplete OnLevelCompleted;
 
 	public bool devMode;
 	public GameObject lightObject;
@@ -96,6 +99,7 @@ public class LightTransmitter : MonoBehaviour
 				if (hit.collider.tag.Equals ("Plant")) {
 					gameManager.PlantHit ();
 					disableControls = true;
+					OnLevelCompleted (currentRayCount, currentLightCharges);
 					return;
 				}
 				if (hit.collider.gameObject.layer == LayerMask.NameToLayer ("Reflective")) {

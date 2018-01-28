@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
 	public GameObject levelCompletePanel;
 	public GameObject levelFailPanel;
 	public Sprite healthyPlant;
 	public SpriteRenderer plant;
+	public TextMeshProUGUI scoreText;
 
 	public void PlantHit ()
 	{

@@ -2082,6 +2082,8 @@ MonoBehaviour:
   creditsPanel: {fileID: 2049335846}
   musicSourcePrefab: {fileID: 1366468872653990, guid: 40ec611bc37996d48832fb40291a5f81,
     type: 2}
+  scoreManagerPrefab: {fileID: 1694955907401968, guid: b25f1270ad1480a4da21699074185fd2,
+    type: 2}
 --- !u!4 &1551131068
 Transform:
   m_ObjectHideFlags: 0

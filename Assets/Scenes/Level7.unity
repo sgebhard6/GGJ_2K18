@@ -914,6 +914,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1362744683816034, guid: c1f5b425673ca3743a790d00c756be25,
     type: 2}
   m_PrefabInternal: {fileID: 1258721919}
+--- !u!114 &1258721922 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114336940036317180, guid: c1f5b425673ca3743a790d00c756be25,
+    type: 2}
+  m_PrefabInternal: {fileID: 1258721919}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 --- !u!1 &1432143937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1273,11 @@ Prefab:
       propertyPath: plant
       value: 
       objectReference: {fileID: 1218431733}
+    - target: {fileID: 114136018035275040, guid: 6cf31eda8e1b61d4b83f6c3ec898507c,
+        type: 2}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1258721922}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cf31eda8e1b61d4b83f6c3ec898507c, type: 2}
   m_IsPrefabParent: 0
