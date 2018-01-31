@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -181,6 +180,31 @@ Prefab:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 877815469}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: activeAtStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
   m_IsPrefabParent: 0
@@ -521,6 +545,31 @@ Prefab:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 2049546764}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: activeAtStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
   m_IsPrefabParent: 0
@@ -641,6 +690,31 @@ Prefab:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 124928159}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: activeAtStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
   m_IsPrefabParent: 0
@@ -1197,12 +1271,12 @@ Prefab:
     - target: {fileID: 224135868877222076, guid: c1f5b425673ca3743a790d00c756be25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 533.5
       objectReference: {fileID: 0}
     - target: {fileID: 224135868877222076, guid: c1f5b425673ca3743a790d00c756be25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 224135868877222076, guid: c1f5b425673ca3743a790d00c756be25,
         type: 2}
@@ -1485,7 +1559,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2204,6 +2277,31 @@ Prefab:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 23967859}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: activeAtStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398378338375510, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212571816747211450, guid: fcc675f893248cf459c0b28dc555b3b1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcc675f893248cf459c0b28dc555b3b1, type: 2}
   m_IsPrefabParent: 0

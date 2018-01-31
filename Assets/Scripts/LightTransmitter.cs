@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LightTransmitter : MonoBehaviour
 {
 	public delegate void LevelComplete (int _currentRayCount, int _currentLightCharges);
-
 	public static event LevelComplete OnLevelCompleted;
 
 	public bool devMode;
@@ -28,7 +26,6 @@ public class LightTransmitter : MonoBehaviour
 	int currentRayCount = 0;
 	int totalRayCount = 0;
 	int currentLightCharges = 0;
-	//List<Ray> rayList = new List<Ray>();
 	List<LightBeam> rayList = new List<LightBeam> ();
 	LineRenderer oldLine;
 	LineRenderer newLine;
@@ -43,7 +40,8 @@ public class LightTransmitter : MonoBehaviour
 	{
 		gameManager = GetComponent<GameManager> ();
 		currentLightCharges = maxLightCharges;
-		Reset ();
+        UpdateCharge();
+        Reset ();
 	}
 
 	private void Reset ()
@@ -60,26 +58,21 @@ public class LightTransmitter : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.Mouse0) || Input.GetKeyDown (KeyCode.Space)) {
 			if (!devMode) {
 				currentLightCharges--;
-				if (currentLightCharges > -1)
-					chargeIndicator.sprite = chargeLevels [currentLightCharges];
-			}
+                UpdateCharge();
+            }
 
 			if (newLine != null) {
 				oldLine = newLine;
 				oldLine.material = oldLineMat;
 			}
 
-			newLine = Instantiate (lightRayRendererPrefab).GetComponent<LineRenderer> ();
-			newLine.material = newLineMat;
+            CreateLightRay();
 
 			Reset ();
 			TransmitLight (lightRay);
 		}
 
-		if (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow))
-			RotateLight (true);
-		else if (Input.GetKey (KeyCode.S) || Input.GetKey (KeyCode.DownArrow))
-			RotateLight (false);
+        RotateLight();
 	}
 
 	void LateUpdate ()
@@ -94,23 +87,32 @@ public class LightTransmitter : MonoBehaviour
 			totalRayCount++;
             
 			RaycastHit2D hit = Physics2D.Raycast (_ray.origin, _ray.direction, maxDistance, layerMask);
-			//rayList.Add(lightRay);
 			rayList.Add (new LightBeam (lightRay, hit.distance));
 
 			if (hit.collider != null) {
-				if (hit.collider.tag.Equals ("Plant")) {
-					gameManager.PlantHit ();
-					disableControls = true;
-					OnLevelCompleted (totalRayCount, currentLightCharges);
-					return;
-				}
-				if (hit.collider.gameObject.layer == LayerMask.NameToLayer ("Reflective")) {
-					newDir = Vector3.Reflect (_ray.direction, hit.normal);
-					lightRay.origin = hit.point + hit.normal * 0.01f;
-					lightRay.direction = newDir;
-					TransmitLight (lightRay);
-					return;
-				}
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Reflective"))
+                {
+                    newDir = Vector3.Reflect(_ray.direction, hit.normal);
+                    lightRay.origin = hit.point + hit.normal * 0.01f;
+                    lightRay.direction = newDir;
+                    TransmitLight(lightRay);
+                    return;
+                }
+                else
+                {
+                    if (hit.collider.tag.Equals("Plant"))
+                    {
+                        gameManager.PlantHit();
+                        disableControls = true;
+                        OnLevelCompleted(totalRayCount, currentLightCharges);
+                        return;
+                    }
+
+                    if(hit.collider.tag.Equals("SolarPanel"))
+                    {
+                        hit.collider.gameObject.GetComponent<SolarPanel>().SendPower();
+                    }
+                }
 			}
 
 			if (currentLightCharges < 1) {
@@ -121,30 +123,50 @@ public class LightTransmitter : MonoBehaviour
 		}
 	}
 
-	public void RotateLight (bool direction)
+	public void RotateLight ()
 	{
-		if (direction == true) {
-			//Rotate Up
+		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
 			lightObject.transform.Rotate (Vector3.forward * rotationSpeed * Time.deltaTime);
-		} else {
-			//Rotate Down
+		}
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
 			lightObject.transform.Rotate (Vector3.forward * -rotationSpeed * Time.deltaTime);
 		}
 	}
 
+    public void ReceivePower(int amount)
+    {
+        currentLightCharges += amount;
+        UpdateCharge();
+    }
+
+    void UpdateCharge()
+    {
+        if (currentLightCharges > -1)
+            chargeIndicator.sprite = chargeLevels[currentLightCharges];
+    }
+
+    void CreateLightRay()
+    {
+        newLine = Instantiate(lightRayRendererPrefab).GetComponent<LineRenderer>();
+        newLine.material = newLineMat;
+        newLine.name = "LightRay";
+    }
+
 	void DrawRays ()
 	{
-		if (rayList.Count < 1)
-			return;
+		if (rayList.Count < 1) return;
+
 		newLine.positionCount = rayList.Count + 1;
 		Vector3[] points = new Vector3[rayList.Count + 1];
-		for (int i = 0; i < points.Length; i++) {
-			if (i < rayList.Count) {
+
+		for (int i = 0; i < points.Length; i++)
+        {
+			if (i < rayList.Count)
 				points [i] = rayList [i].beam.origin;
-				//Debug.DrawRay(rayList[i].beam.origin, rayList[i].beam.direction * 20, Color.green);
-			} else
-				points [i] = rayList [i - 1].beam.origin + (rayList [i - 1].beam.direction * rayList [i - 1].distance);
-            
+            else
+				points [i] = rayList [i - 1].beam.origin + (rayList [i - 1].beam.direction * rayList [i - 1].distance);            
 		}
 
 		newLine.SetPositions (points);
