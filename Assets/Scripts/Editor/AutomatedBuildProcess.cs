@@ -7,7 +7,7 @@ using UnityEditor;
 
 public class AutomatedBuildProcess {
 
-    private static string windowsBuildFolderPath = "D:/C_Drive_Stuff/Users/gebha/GameDev/GompBot_Build";
+    private static string windowsBuildFolderPath = "D:/C_Drive_Stuff/Users/gebha/GameDev/Photosynthesis_Build";
 
     public static void StartBuild()
     {
@@ -18,14 +18,19 @@ public class AutomatedBuildProcess {
                 enabledScenePathNames.Add(buildSettingsScene.path);
         }
 
-        string ExecutableDirectoryPath = windowsBuildFolderPath + "GompBot_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "/";
+        if(!Directory.Exists(windowsBuildFolderPath))
+        {
+            Directory.CreateDirectory(windowsBuildFolderPath);
+        }
+
+        string ExecutableDirectoryPath = windowsBuildFolderPath + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "/";
 
         if(!Directory.Exists(ExecutableDirectoryPath))
         {
             Directory.CreateDirectory(ExecutableDirectoryPath);
         }
 
-        string windowsExecutableName = "GompBot_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".exe";
+        string windowsExecutableName = "Photosynthesis_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".exe";
 
         Debug.Log("Starting to make Windows Build");
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
