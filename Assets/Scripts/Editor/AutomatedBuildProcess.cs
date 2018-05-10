@@ -23,7 +23,7 @@ public class AutomatedBuildProcess {
             Directory.CreateDirectory(windowsBuildFolderPath);
         }
 
-        string ExecutableDirectoryPath = windowsBuildFolderPath + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "/";
+        string ExecutableDirectoryPath = windowsBuildFolderPath + "/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "/";
 
         if(!Directory.Exists(ExecutableDirectoryPath))
         {
